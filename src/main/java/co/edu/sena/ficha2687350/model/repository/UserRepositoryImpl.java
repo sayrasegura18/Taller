@@ -1,6 +1,6 @@
 package co.edu.sena.ficha2687350.model.repository;
 
-import co.edu.sena.ficha2687350.model.User;
+import co.edu.sena.ficha2687350.model.Beans.User;
 import co.edu.sena.ficha2687350.util.ConnectionPool;
 
 import java.sql.*;
