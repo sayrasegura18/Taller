@@ -1,41 +1,43 @@
 package co.edu.sena.ficha2687350.model.Beans;
 
-public class Category {
 
-    private int categoryId;
-    private String categoryName;
+
+public  class Category {
+    private Integer id;
+    private String name;
 
     public Category() {
-        // Constructor vacío
     }
 
-    public static int getCategoryId() {
-        return categoryId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getName() {
+        return name;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
+        String categoryId = null;
+        String categoryName;
+        categoryName = null;
         return "Category{" +
-                "categoryId=" + categoryId +
-                ", categoryName='" + categoryName + '\'' +
+                "categoryId=" + null +
+                ", categoryName='" + null + '\'' +
                 '}';
     }
 
-    public void setCategory_name(String pan) {
-    }
 
-    public void setCategory_id(int i) {
-    }
 }
+
+
+

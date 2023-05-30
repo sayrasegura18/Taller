@@ -1,55 +1,52 @@
 package co.edu.sena.ficha2687350.model.Beans;
 
-public class Product {
 
-    private int productId;
-    private String productName;
-    private int productValue;
-    private int categoryId;
+import java.sql.SQLException;
 
-    public Product() {
-        // Constructor vacío
-    }
+public  class Product {
+        private Integer id;
+        private String name;
+        private double value;
 
-    public int getProductId() {
-        return productId;
-    }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
+        public Integer getId() {
+            return id;
+        }
 
-    public String getProductName() {
-        return productName;
-    }
+        public void setId(Integer id) {
+            this.id = id;
+        }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
+        public String getName() {
+            return name;
+        }
 
-    public int getProductValue() {
-        return productValue;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-    public void setProductValue(int productValue) {
-        this.productValue = productValue;
-    }
+        public double getValue() {
+            return value;
+        }
 
-    public int getCategoryId() {
-        return categoryId;
-    }
+        public void setValue(double value) {
+            this.value = value;
+        }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
 
     @Override
     public String toString() {
+        String productId = null;
+        String productName = null;
+        String productValue;
+        productValue = null;
+        String categoryId = null;
         return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productValue=" + productValue +
-                ", categoryId=" + categoryId +
+                "productId=" + null +
+                ", productName='" + null + '\'' +
+                ", productValue=" + null +
+                ", categoryId=" + null +
                 '}';
     }
+
 }

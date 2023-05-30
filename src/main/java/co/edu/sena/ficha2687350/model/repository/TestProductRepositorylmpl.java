@@ -2,42 +2,56 @@ package co.edu.sena.ficha2687350.model.repository;
 
 import co.edu.sena.ficha2687350.model.Beans.Product;
 
-import java.sql.SQLException;
+
+import java.sql.*;
+
+import java.util.List;
 
 public class TestProductRepositorylmpl {
     public static void main(String[] args) throws SQLException {
-        Repository<Product> repository = (Repository<Product>) new TestProductRepositorylmpl();
+        ProductRepositorylmpl repository = new Productlmpl();
 
-        System.out.println("========== saveObj Insert =========="); // insert
+        System.out.println("========== saveObj Insert ==========");
         Product productInsert = new Product();
-        productInsert.setProductName("Harina");
-        productInsert.setProductValue(113212);
-        productInsert.setCategoryId(1);
+        productInsert.setName("Harina");
+        productInsert.setValue(113212);
         repository.saveObj(productInsert);
-        productInsert.setProductName("Lentejas");
-        productInsert.setProductValue(12000);
-        productInsert.setCategoryId(1);
+
+        productInsert.setName("Lentejas");
+        productInsert.setValue(12000);
         repository.saveObj(productInsert);
 
         System.out.println("========== listAllObj ==========");
-        repository.listAllOb().forEach(System.out::println);
+        List<Product> products = repository.listAllObj();
+        for (Product product : products) {
+            System.out.println(product);
+        }
         System.out.println();
 
         System.out.println("========== byIdObj ==========");
         System.out.println(repository.byIdObj(1));
         System.out.println();
 
-        System.out.println("========== saveObj =========="); //update
+        System.out.println("========== saveObj ==========");
         Product productUpdate = new Product();
-        productUpdate.setProductId(1);
-        productUpdate.setProductName("Platano");
-        productUpdate.setProductValue(125456);
-        productUpdate.setCategoryId(1);
+        productUpdate.setId(1);
+        productUpdate.setName("Platano");
+        productUpdate.setValue(125456);
         repository.saveObj(productUpdate);
-        repository.listAllOb().forEach(System.out::println);
 
-        System.out.println("========== saveObj =========="); //delete
+        products = repository.listAllObj();
+        for (Product product : products) {
+            System.out.println(product);
+        }
+
+        System.out.println("========== deleteObj ==========");
         repository.deleteObj(2);
-        repository.listAllOb().forEach(System.out::println);
-    } // TestProductRepositoryImpl
+
+        products = repository.listAllObj();
+        for (Product product : products) {
+            System.out.println(product);
+        }
+    }
 }
+
+

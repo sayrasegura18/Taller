@@ -8,77 +8,86 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Categorylmpl implements CategoryRepositorylmpl {
-        private String sql = null;
+    private String sql = null;
 
-        @Override
-        public List<Category> listAllObj() throws SQLException {
-            sql = "SELECT c.categoryId, c.categoryName " +
-                    "FROM categories_tbl c ORDER BY c.categoryName";
-            List<Category> categories = new ArrayList<>();
-            try (Connection conn = ConnectionPool.getConnection();
-                 Statement stmt = conn.createStatement();
-                 ResultSet rs = ((Statement) stmt).executeQuery(sql)) {
-                while (rs.next()) {
-                    Category c = createObj(rs);
-                    categories.add(c);
+    @Override
+    public List<Category> listAllOb() throws SQLException {
+        sql = "SELECT id, name FROM categories_tbl";
+        List<Category> categories = new ArrayList<>();
+
+        try (Connection conn = ConnectionPool.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                Category category = createObj(rs);
+                categories.add(category);
+            }
+        }
+
+        return categories;
+    }
+
+    @Override
+    public Category byIdObj(Integer id) throws SQLException {
+        sql = "SELECT id, name FROM categories_tbl WHERE id = ?";
+        Category category = null;
+
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    category = createObj(rs);
                 }
             }
-            return categories;
         }
 
-        @Override
-        public Category byIdObj(Integer id) throws SQLException {
-            sql = "SELECT c.categoryId, c.categoryName " +
-                    "FROM categories_tbl c WHERE c.categoryId = ?";
-            Category category = null;
-            try (Connection conn = ConnectionPool.getConnection();
-                 PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setInt(1, id);
-                try (ResultSet rs = ps.executeQuery()) {
-                    if (rs.next()) {
-                        category = createObj(rs);
-                    }
-                }
-            }
-            return category;
+        return category;
+    }
+
+    @Override
+    public Integer saveObj(Category category) throws SQLException {
+        int rowAffected = 0;
+
+        if (category.getId() != null && category.getId() > 0) {
+            sql = "UPDATE categories_tbl SET name = ? WHERE id = ?";
+        } else {
+            sql = "INSERT INTO categories_tbl (name) VALUES (?)";
         }
 
-        @Override
-        public Integer saveObj(Category category) throws SQLException {
-            int rowsAffected = 0;
-            if (Category.getCategoryId() != null && Category.getCategoryId() > 0) {
-                sql = "UPDATE categories_tbl SET categoryName = ? " +
-                        "WHERE categoryId = ?";
-            } else {
-                sql = "INSERT INTO categories_tbl (categoryName) " +
-                        "VALUES (UPPER(?))";
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, category.getName());
+
+            if (category.getId() != null && category.getId() > 0) {
+                ps.setInt(2, category.getId());
             }
-            try (Connection conn = ConnectionPool.getConnection();
-                 PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, category.getCategoryName());
-                if (Category.getCategoryId() != null && Category.getCategoryId() > 0) {
-                    ps.setInt(2, category.getCategoryId());
-                }
-                rowsAffected = ps.executeUpdate();
-            }
-            return rowsAffected;
+
+            rowAffected = ps.executeUpdate();
         }
 
-        @Override
-        public void deleteObj(Integer id) throws SQLException {
-            sql = "DELETE FROM categories_tbl WHERE categoryId = ?";
-            try (Connection conn = ConnectionPool.getConnection();
-                 PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setInt(1, id);
-                ps.executeUpdate();
-            }
-        }
+        return rowAffected;
+    }
 
-        @Override
-        public Category createObj(ResultSet rs) throws SQLException {
-            Category category = new Category();
-            category.setCategoryId(rs.getInt("category_id"));
-            category.setCategoryName(rs.getString("category_name"));
-            return category;
+    @Override
+    public void deleteObj(Integer id) throws SQLException {
+
+        sql = "DELETE FROM categories_tbl WHERE id = ?";
+
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
         }
     }
+
+    @Override
+    public Category createObj(ResultSet rs) throws SQLException {
+        Category category = new Category();
+        category.setId(rs.getInt("id"));
+        category.setName(rs.getString("name"));
+        return category;
+    }
+}
