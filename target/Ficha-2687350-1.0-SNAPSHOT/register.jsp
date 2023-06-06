@@ -19,7 +19,7 @@
 <body class="text-center">
 <main class="form-signin w-100 m-auto">
     <form action="" method="post">
-        <img class="mb-4" src="img/logo.png" alt="MY APP" width="100">
+        <img class="mb-4" src="img/Logo.jpg" alt="MY APP" width="150">
         <h4 class="text-secondary">MY -APP</h4>
         <h1 class="h5 mb-3 fw-normal">Ingreso</h1>
 
@@ -37,21 +37,16 @@
 
         <button class=" btn btn-lg btn-primary" type="submit">Ingresar</button>
         <div id="register">
+            <br>
+            <br>
             <a href="index.jsp">Registrarse</a>
         </div>
-        <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP © <%=displayDate()%>
-        </p>
+        <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP ©</p>
 
     </form>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<%!
-    public String displayDate(){
-        SimpleDateFormat dateFormat= new SimpleDateFormat("YYYY");
-        Date date = Calendar.getInstance().getTime();
-        return dateFormat.format(date);
-    }
-%>
+
 </body>
 </html>

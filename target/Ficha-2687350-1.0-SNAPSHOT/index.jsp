@@ -14,12 +14,12 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous">
 <link rel="stylesheet" href="https:/cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-<link rel="stylesheet" href="./css/signin.css">
+<link rel="stylesheet" href="css/signin.css">
 
 <body class="text-center">
 <main class="form-signing w-100 m-auto">
     <form action="" method="post">
-        <img class="mb-4" src="img/logo.png" alt="MY APP" width="100">
+        <img class="mb-4" src="img/Logo.jpg" alt="" width="150">
         <h4 class="text-secondary">MY -APP</h4>
         <h1 class="h5 mb-3 fw-normal">Login</h1>
         <div class="form-floating"></div>
@@ -38,15 +38,22 @@
         <form action="" method="post"></form>
         <label for="password">Contraseña:</label><br>
         <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"><br>
+        <br>
 
         <div>
-            <input class="btn btn-primary" type="submit" value="Enviar">
+            <input class="btn btn-primary" type="submit" value="Enviar"><br>
 
             <input class="btn btn-second" type="submit" value="Ingresar"><br>
 
 
             <a href="register.jsp">Iniciar secion</a>
-            <a href="productos.jsp">Registar productos</a>
+            <br>
+            <a href="categories.jsp">Registar categorias</a><br>
+            <a href="productos.jsp">Registar productos</a><br>
+
+            <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP ©</p>
+
+
 
 
 

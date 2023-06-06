@@ -16,25 +16,25 @@
 </head>
 <body class="text-center">
     <main class="form-signin w-100 m-auto">
+        <img class="mb-4" src="img/categorias.png" alt="" width="200">
         <form action="" method="post">
             <h4 class="text-secondary">MY -APP</h4>
-            <h1 class="h5 mb-3 fw-normal">Ingreso</h1>
+            <h1 class="h5 mb-3 fw-normal">Categoria</h1>
 
                      <div class="form-floating">
                 <input type="number" class="form-control" id="categoriaId"
-                    placeholder="Ingrese el ID de la categoría" required>
-                <label for="categoriaId">ID de la categoría:</label>
+                    placeholder="" required>
+                <label for="categoriaId">ID de la categoria:</label>
             </div>
 
             <div class="form-floating">
                 <input type="text" class="form-control" id="categoriaNombre"
-                    placeholder="Ingrese el nombre de la categoría" required>
-                <label for="categoriaNombre">Nombre de la categoría:</label>
+                    placeholder="" required>
+                <label for="categoriaNombre">Nombre de la categoria:</label>
             </div>
-
-            <button class="btn btn-lg btn-primary" type="submit">Ingresar</button>
+            <br>
+            <button class="btn btn-lg btn-primary" type="submit">Registrar categoria</button>
             <div id="register">
-                <a href="index.jsp">Registrar categoria</a>
             </div>
             <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP © </p>
         </form>

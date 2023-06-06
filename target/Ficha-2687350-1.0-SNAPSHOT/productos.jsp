@@ -19,24 +19,33 @@
 <body class="text-center">
 <main class="form-signin w-100 m-auto">
     <form action="" method="post">
+        <img class="mb-4" src="img/productos.jpg" alt="" width="200">
         <h4 class="text-secondary">MY -APP</h4>
-        <h1 class="h5 mb-3 fw-normal">Ingreso</h1>
+        <h1 class="h5 mb-3 fw-normal">Productos</h1>
 
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput"
-                   placeholder="Ingrese sy nombre de usuario" required autofocus
+                   placeholder="" required autofocus
                    pattern="[A-Za-z0-9]{8, 12}">
-            <label for="floatingInput">nombre del producto:</label>
+            <label for="floatingInput">Id del producto:</label>
         </div>
-        div class="form-floating">
-        <input type="text" class="form-control" id=""
-               placeholder="Ingrese sy nombre de usuario" required autofocus
-               pattern="[A-Za-z0-9]{8, 12}">
-        <label for="floatingInput">Valor del producto:</label>
+        <div class="form-floating">
+            <input type="text" class="form-control"
+                   placeholder="" required autofocus
+                   pattern="[A-Za-z0-9]{8, 35}">
+            <label for="floatingInput">Nombre del producto:</label>
         </div>
-        <button class=" btn btn-lg btn-primary" type="submit">Ingresar</button>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control"
+                   placeholder="" required autofocus
+                   pattern="[A-Za-z0-9]{8, 35}">
+            <label for="floatingInput">Valor del producto:</label>
+        </div>
+        <br>
+        <br>
+        <button class=" btn btn-lg btn-primary" type="submit">Registrar producto</button>
         <div id="register">
-            <a href="index.jsp">Registrar producto</a>
         </div>
         <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP © </p>
 
