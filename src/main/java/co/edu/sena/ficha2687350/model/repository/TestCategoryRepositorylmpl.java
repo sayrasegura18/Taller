@@ -10,13 +10,13 @@ public class TestCategoryRepositorylmpl {
 
         System.out.println("========== saveObj Insert ==========");
         Category categoryInsert = new Category();
-        categoryInsert.setCategory_name("Jabones");
+        categoryInsert.setName("Jabones");
         repository.saveObj(categoryInsert);
-        categoryInsert.setCategory_name("Carnes");
+        categoryInsert.setName("Carnes");
         repository.saveObj(categoryInsert);
 
         System.out.println("========== listAllObj ==========");
-        repository.listAllObj().forEach(System.out::println);
+        repository.listAllOb().forEach(System.out::println);
         System.out.println();
 
         System.out.println("========== byIdObj ==========");
@@ -25,13 +25,13 @@ public class TestCategoryRepositorylmpl {
 
         System.out.println("========== saveObj ==========");
         Category categoryUpdate = new Category();
-        categoryUpdate.setCategory_id(2);
-        categoryUpdate.setCategory_name("Pan");
+        categoryUpdate.setId(2);
+        categoryUpdate.setName("Pan");
         repository.saveObj(categoryUpdate);
-        repository.listAllObj().forEach(System.out::println);
+        repository.listAllOb().forEach(System.out::println);
 
         System.out.println("========== deleteObj ==========");
         repository.deleteObj(2);
-        repository.listAllObj().forEach(System.out::println);
+        repository.listAllOb().forEach(System.out::println);
     }
 }
