@@ -46,7 +46,7 @@
             <input class="btn btn-second" type="submit" value="Ingresar"><br>
 
 
-            <a href="register.jsp">Iniciar secion</a>
+            <a href="register.jsp">Iniciar sesion</a>
             <br>
             <a href="categories.jsp">Registar categorias</a><br>
             <a href="productos.jsp">Registar productos</a><br>
