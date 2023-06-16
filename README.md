@@ -17,7 +17,7 @@ prueba 3
 
 Taller 6
 
-Dependencias MAAVEN
+Dependencias MAVEN
 
 ![image](https://github.com/sayrasegura18/Taller/assets/125483212/e1781ecb-22ca-4c6c-b2db-7b7b96e66c03)
 
@@ -43,10 +43,15 @@ Interfas Repository
  
  ![image](https://github.com/sayrasegura18/Taller/assets/125483212/bc8974cd-8c95-469e-9908-019d4480a9ff)
  
+ ![image](https://github.com/sayrasegura18/Taller/assets/125483212/acf8915c-8498-4312-87dc-9ff4615879ee)
+ 
+ ![image](https://github.com/sayrasegura18/Taller/assets/125483212/0129aaf4-69f9-43fe-bb01-c2e020e23f13)
+
+
  Login y Registro
  
- ![image](https://github.com/sayrasegura18/Taller/assets/125483212/568cc92f-7819-4bee-9460-bc35ab3e359f)
- 
+![image](https://github.com/sayrasegura18/Taller/assets/125483212/be6d22eb-9a79-4cbc-882a-ef5c7e1d04df)
+
  ![image](https://github.com/sayrasegura18/Taller/assets/125483212/c8adb202-25a2-40a0-89d3-1e95f58b7330)
  
  Script Base de datos
