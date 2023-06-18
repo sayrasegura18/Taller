@@ -13,12 +13,12 @@ public class TestProductRepositorylmpl {
 
         System.out.println("========== saveObj Insert ==========");
         Product productInsert = new Product();
-        productInsert.setName("Harina");
-        productInsert.setValue(113212);
+        productInsert.setproduct_name("Harina");
+        productInsert.setproduct_value(113212);
         repository.saveObj(productInsert);
 
-        productInsert.setName("Lentejas");
-        productInsert.setValue(12000);
+        productInsert.setproduct_name("Lentejas");
+        productInsert.setproduct_value(12000);
         repository.saveObj(productInsert);
 
         System.out.println("========== listAllObj ==========");
@@ -34,9 +34,9 @@ public class TestProductRepositorylmpl {
 
         System.out.println("========== saveObj ==========");
         Product productUpdate = new Product();
-        productUpdate.setId(1);
-        productUpdate.setName("Platano");
-        productUpdate.setValue(125456);
+        productUpdate.setproduct_id(1);
+        productUpdate.setproduct_name("Platano");
+        productUpdate.setproduct_value(125456);
         repository.saveObj(productUpdate);
 
         products = repository.listAllObj();

@@ -5,8 +5,8 @@
 </head>
 <meta charset="UTF-8">
 <meta name="author" content="Nombre Autor">
-<meta name="description" content="Esta debe ser la información que aparece en el párrafo que acompaña los resultados de una busqueda de internet">
-<meta name="keywords" content="registro de usuario, formulario de registro, crear cuenta, reistro en línea">
+<meta name="description" content="">
+<meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>login MY APP</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -15,6 +15,7 @@
       crossorigin="anonymous">
 <link rel="stylesheet" href="https:/cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/signin.css">
+<link href="Templates/plantillas.jsp">
 
 <body class="text-center">
 <main class="form-signing w-100 m-auto">
@@ -50,8 +51,7 @@
             <br>
             <a href="categories.jsp">Registar categorias</a><br>
             <a href="productos.jsp">Registar productos</a><br>
-
-            <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP ©</p>
+            <link href="Templates/footer.jsp">
 
 
 

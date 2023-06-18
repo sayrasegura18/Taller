@@ -1,38 +1,35 @@
 package co.edu.sena.ficha2687350.model.Beans;
-
-
-
 public  class Category {
-    private Integer id;
-    private String name;
+    private Integer category_id;
+    private String category_name;
 
     public Category() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getCategory_id() {
+        return category_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCategory_id(Integer category_id) {
+        this.category_id = category_id;
     }
 
-    public String getName() {
-        return name;
+    public String getCategory_name() {
+        return category_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
     }
 
     @Override
     public String toString() {
-        String categoryId = null;
-        String categoryName;
-        categoryName = null;
+        String category_id = null;
+        String category_name;
+        category_name = null;
         return "Category{" +
-                "categoryId=" + null +
-                ", categoryName='" + null + '\'' +
+                "category_id=" + null +
+                ", category_name='" + null + '\'' +
                 '}';
     }
 

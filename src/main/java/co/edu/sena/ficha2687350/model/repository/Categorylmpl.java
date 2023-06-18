@@ -12,7 +12,7 @@ public class Categorylmpl implements CategoryRepositorylmpl {
 
     @Override
     public List<Category> listAllOb() throws SQLException {
-        sql = "SELECT id, name FROM categories_tbl";
+        sql = "SELECT category_id, category_name FROM categories_tbl";
         List<Category> categories = new ArrayList<>();
 
         try (Connection conn = ConnectionPool.getConnection();
@@ -30,7 +30,7 @@ public class Categorylmpl implements CategoryRepositorylmpl {
 
     @Override
     public Category byIdObj(Integer id) throws SQLException {
-        sql = "SELECT id, name FROM categories_tbl WHERE id = ?";
+        sql = "SELECT category_id, category_name FROM categories_tbl WHERE category_id = ?";
         Category category = null;
 
         try (Connection conn = ConnectionPool.getConnection();
@@ -50,19 +50,19 @@ public class Categorylmpl implements CategoryRepositorylmpl {
     public Integer saveObj(Category category) throws SQLException {
         int rowAffected = 0;
 
-        if (category.getId() != null && category.getId() > 0) {
-            sql = "UPDATE categories_tbl SET name = ? WHERE id = ?";
+        if (category.getCategory_id() != null && category.getCategory_id() > 0) {
+            sql = "UPDATE categories_tbl SET category_name = ? WHERE category_id = ?";
         } else {
-            sql = "INSERT INTO categories_tbl (name) VALUES (?)";
+            sql = "INSERT INTO categories_tbl (category_name) VALUES (?)";
         }
 
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, category.getName());
+            ps.setString(1, category.getCategory_name());
 
-            if (category.getId() != null && category.getId() > 0) {
-                ps.setInt(2, category.getId());
+            if (category.getCategory_id() != null && category.getCategory_id() > 0) {
+                ps.setInt(2, category.getCategory_id());
             }
 
             rowAffected = ps.executeUpdate();
@@ -72,13 +72,13 @@ public class Categorylmpl implements CategoryRepositorylmpl {
     }
 
     @Override
-    public void deleteObj(Integer id) throws SQLException {
+    public void deleteObj(Integer Id) throws SQLException {
 
-        sql = "DELETE FROM categories_tbl WHERE id = ?";
+        sql = "DELETE FROM categories_tbl WHERE category_id = ?";
 
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, id);
+            ps.setInt(1, Id);
             ps.executeUpdate();
         }
     }
@@ -86,8 +86,8 @@ public class Categorylmpl implements CategoryRepositorylmpl {
     @Override
     public Category createObj(ResultSet rs) throws SQLException {
         Category category = new Category();
-        category.setId(rs.getInt("id"));
-        category.setName(rs.getString("name"));
+        category.setCategory_id(rs.getInt("category_id"));
+        category.setCategory_name(rs.getString("category_name"));
         return category;
     }
 }

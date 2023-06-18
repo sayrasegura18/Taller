@@ -12,7 +12,7 @@ public class Productlmpl implements ProductRepositorylmpl {
 
         @Override
         public List<Product> listAllObj() throws SQLException {
-            sql = "SELECT id, name, value FROM products_tbl";
+            sql = "SELECT product_id, product_name, product_value FROM products_tbl";
             List<Product> products = new ArrayList<>();
 
             try (Connection conn = ConnectionPool.getConnection();
@@ -30,7 +30,7 @@ public class Productlmpl implements ProductRepositorylmpl {
 
         @Override
         public Product byIdObj(Integer id) throws SQLException {
-            sql = "SELECT id, name, value FROM products_tbl WHERE id = ?";
+            sql = "SELECT product_id, product_name, product_value FROM products_tbl WHERE product_id = ?";
             Product product = null;
 
             try (Connection conn = ConnectionPool.getConnection();
@@ -50,20 +50,20 @@ public class Productlmpl implements ProductRepositorylmpl {
         public Integer saveObj(Product product) throws SQLException {
             int rowAffected = 0;
 
-            if (product.getId() != null && product.getId() > 0) {
-                sql = "UPDATE products_tbl SET name = ?, value = ? WHERE id = ?";
+            if (product.getproduct_id() != null && product.getproduct_id() > 0) {
+                sql = "UPDATE products_tbl SET product_name = ?, product_value = ? WHERE product_id = ?";
             } else {
-                sql = "INSERT INTO products_tbl (name, value) VALUES (?, ?)";
+                sql = "INSERT INTO products_tbl (product_name, product_value) VALUES (?, ?)";
             }
 
             try (Connection conn = ConnectionPool.getConnection();
                  PreparedStatement ps = conn.prepareStatement(sql)) {
 
-                ps.setString(1, product.getName());
-                ps.setDouble(2, product.getValue());
+                ps.setString(1, product.getproduct_name());
+                ps.setDouble(2, product.getproduct_value());
 
-                if (product.getId() != null && product.getId() > 0) {
-                    ps.setInt(3, product.getId());
+                if (product.getproduct_id() != null && product.getproduct_id() > 0) {
+                    ps.setInt(3, product.getproduct_id());
                 }
 
                 rowAffected = ps.executeUpdate();
@@ -74,7 +74,7 @@ public class Productlmpl implements ProductRepositorylmpl {
 
         @Override
         public void deleteObj(Integer id) throws SQLException {
-            sql = "DELETE FROM products_tbl WHERE id = ?";
+            sql = "DELETE FROM products_tbl WHERE product_id = ?";
 
             try (Connection conn = ConnectionPool.getConnection();
                  PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -88,8 +88,8 @@ public class Productlmpl implements ProductRepositorylmpl {
             Product product = new Product() {
 
             };
-            product.setId(rs.getInt("id"));
-            product.setName(rs.getString("name"));
-            product.setValue(rs.getDouble("value"));
+            product.setproduct_id(rs.getInt("product_id"));
+            product.setproduct_name(rs.getString("product_name"));
+            product.setproduct_value(rs.getDouble("product_value"));
             return product;
         }}

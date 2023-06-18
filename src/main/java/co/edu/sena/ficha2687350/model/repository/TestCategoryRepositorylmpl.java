@@ -6,13 +6,12 @@ import java.sql.SQLException;
 
 public class TestCategoryRepositorylmpl {
     public static void main(String[] args) throws SQLException {
-        CategoryRepositorylmpl repository = new Categorylmpl();
-
+        CategoryRepositorylmpl repository = (CategoryRepositorylmpl) new Categorylmpl();
         System.out.println("========== saveObj Insert ==========");
         Category categoryInsert = new Category();
-        categoryInsert.setName("Jabones");
+        categoryInsert.setCategory_name("Jabones");
         repository.saveObj(categoryInsert);
-        categoryInsert.setName("Carnes");
+        categoryInsert.setCategory_name("Carnes");
         repository.saveObj(categoryInsert);
 
         System.out.println("========== listAllObj ==========");
@@ -25,8 +24,8 @@ public class TestCategoryRepositorylmpl {
 
         System.out.println("========== saveObj ==========");
         Category categoryUpdate = new Category();
-        categoryUpdate.setId(2);
-        categoryUpdate.setName("Pan");
+        categoryUpdate.setCategory_id(2);
+        categoryUpdate.setCategory_name("Pan");
         repository.saveObj(categoryUpdate);
         repository.listAllOb().forEach(System.out::println);
 

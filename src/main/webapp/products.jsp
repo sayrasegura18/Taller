@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Registro</title>
+    <title>Products</title>
 </head>
 <meta charset="UTF-8">
-<meta name="author" content="Nombre Autor">
+<meta name="author" content="Sayra">
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Registro de Usuario MY APP</title>
+<title>Registro de Productos MY APP</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -19,32 +19,35 @@
 <body class="text-center">
 <main class="form-signin w-100 m-auto">
     <form action="" method="post">
-        <img class="mb-4" src="img/Logo.jpg" alt="MY APP" width="150">
+        <img class="mb-4" src="img/productos.jpg" alt="" width="200">
         <h4 class="text-secondary">MY -APP</h4>
-        <h1 class="h5 mb-3 fw-normal">Ingreso</h1>
+        <h1 class="h5 mb-3 fw-normal">Productos</h1>
 
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput"
-                   placeholder="Ingrese sy nombre de usuario" required autofocus
+                   placeholder="" required autofocus
                    pattern="[A-Za-z0-9]{8, 12}">
-            <label for="floatingInput">Usuario:</label>
+            <label for="floatingInput">Id del producto:</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword"
-                   placeholder="Ingrese su contraseña" required pattern="[A-a-z0-9]{8, 12}">
-            <label for="floatingPassword">Contraseña:</label>
+            <input type="text" class="form-control"
+                   placeholder="" required autofocus
+                   pattern="[A-Za-z0-9]{8, 35}">
+            <label for="floatingInput">Nombre del producto:</label>
         </div>
-
-        <button class=" btn btn-lg btn-primary" type="submit">Ingresar</button>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control"
+                   placeholder="" required autofocus
+                   pattern="[A-Za-z0-9]{8, 35}">
+            <label for="floatingInput">Valor del producto:</label>
+        </div>
+        <br>
+        <br>
+        <button class=" btn btn-lg btn-primary" type="submit">Registrar producto</button>
         <div id="register">
-            <br>
-            <br>
-            <a href="index.jsp">Registrarse</a>
-            <br>
-            <a href="categories.jsp">Registar categorias</a><br>
-            <a href="products.jsp">Registar productos</a><br>
         </div>
-        <link href="Templates/footer.jsp">
+        <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP © </p>
 
     </form>
 </main>

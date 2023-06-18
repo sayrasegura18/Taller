@@ -15,7 +15,7 @@ public interface CategoryRepositorylmpl {
 
         Integer saveObj( Category t ) throws SQLException;
 
-        void deleteObj ( Integer id ) throws SQLException;
+        void deleteObj ( Integer Id ) throws SQLException;
 
         Category  createObj ( ResultSet rs ) throws SQLException;
 

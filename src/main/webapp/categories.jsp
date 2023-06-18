@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Login</title>
+    <title>Categorias</title>
     <meta charset="UTF-8">
     <meta name="author" content="Sayra">
     <meta name="description" content="">
@@ -35,6 +35,12 @@
             <br>
             <button class="btn btn-lg btn-primary" type="submit">Registrar categoria</button>
             <div id="register">
+
+                <a href="register.jsp">Iniciar sesion</a>
+                <br>
+                <a href="categories.jsp">Registar categorias</a><br>
+                <a href="products.jsp">Registar productos</a><br>
+
             </div>
             <p class="mt-3 mb-3 text-muted">Todos los Derechos Reservados MY APP © </p>
         </form>
